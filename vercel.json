@@ -1,0 +1,47 @@
+{
+  "version": 2,
+  "name": "voice-social",
+  "framework": null,
+  "buildCommand": "npm install --force && cd client && npm install --force && npm run build",
+  "outputDirectory": "client/build",
+  "installCommand": "echo 'Custom install'",
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/serverless"
+    },
+    {
+      "source": "/socket.io/(.*)",
+      "destination": "/api/socket"
+    },
+    {
+      "source": "/health",
+      "destination": "/api/health"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production",
+    "NPM_CONFIG_LEGACY_PEER_DEPS": "true",
+    "NPM_CONFIG_FUND": "false",
+    "NPM_CONFIG_AUDIT": "false"
+  },
+  "functions": {
+    "api/serverless.js": {
+      "maxDuration": 30
+    },
+    "api/socket.js": {
+      "maxDuration": 30
+    },
+    "api/health.js": {
+      "maxDuration": 10
+    }
+  },
+  "regions": ["iad1"],
+  "github": {
+    "autoAlias": false
+  }
+}

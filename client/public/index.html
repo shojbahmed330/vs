@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="bn">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="theme-color" content="#4267B2" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Voice Social - ভয়েস কমান্ড দিয়ে সোশ্যাল মিডিয়া ব্যবহার করুন। বন্ধুদের সাথে যোগাযোগ করুন, স্টোরি শেয়ার করুন এবং আরও অনেক কিছু।" />
+    <meta name="keywords" content="voice social, social media, bangladesh, বাংলা সোশ্যাল মিডিয়া, voice commands" />
+    <meta name="author" content="Voice Social Team" />
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Voice Social - ভয়েস সোশ্যাল" />
+    <meta property="og:description" content="ভয়েস কমান্ড দিয়ে সোশ্যাল মিডিয়া ব্যবহার করুন" />
+    <meta property="og:image" content="%PUBLIC_URL%/icon-512x512.png" />
+    <meta property="og:url" content="https://voicesocial.app" />
+    <meta property="og:type" content="website" />
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Voice Social - ভয়েস সোশ্যাল" />
+    <meta name="twitter:description" content="ভয়েস কমান্ড দিয়ে সোশ্যাল মিডিয়া ব্যবহার করুন" />
+    <meta name="twitter:image" content="%PUBLIC_URL%/icon-512x512.png" />
+    
+    <!-- PWA Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/favicon-16x16.png" />
+    <link rel="mask-icon" href="%PUBLIC_URL%/safari-pinned-tab.svg" color="#4267B2" />
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Bengali:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="%PUBLIC_URL%/icon-192x192.png" as="image" />
+    <link rel="preload" href="%PUBLIC_URL%/offline.html" as="document" />
+    
+    <title>Voice Social - ভয়েস সোশ্যাল</title>
+    
+    <!-- Critical CSS for loading screen -->
+    <style>
+      body {
+        margin: 0;
+        font-family: 'Inter', 'Noto Sans Bengali', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        background-color: #f0f2f5;
+      }
+      
+      .initial-loading {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #4267B2 0%, #42b883 100%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        z-index: 9999;
+      }
+      
+      .loading-logo {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+        animation: pulse 1.5s ease-in-out infinite alternate;
+      }
+      
+      .loading-text {
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+      
+      .loading-subtitle {
+        font-size: 16px;
+        opacity: 0.8;
+      }
+      
+      @keyframes pulse {
+        from { transform: scale(1); }
+        to { transform: scale(1.1); }
+      }
+      
+      .loading-spinner {
+        width: 40px;
+        height: 40px;
+        border: 3px solid rgba(255,255,255,0.3);
+        border-radius: 50%;
+        border-top-color: white;
+        animation: spin 1s ease-in-out infinite;
+        margin-top: 20px;
+      }
+      
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>
+      <div style="text-align: center; padding: 50px; font-family: Arial, sans-serif;">
+        <h1>JavaScript প্রয়োজন</h1>
+        <p>এই অ্যাপটি চালানোর জন্য আপনাকে JavaScript চালু করতে হবে।</p>
+        <p>You need to enable JavaScript to run this app.</p>
+      </div>
+    </noscript>
+    
+    <!-- Initial Loading Screen -->
+    <div id="initial-loading" class="initial-loading">
+      <div class="loading-logo">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="#4267B2">
+          <path d="M12 14c1.66 0 2.99-1.34 2.99-3L15 5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z"/>
+        </svg>
+      </div>
+      <div class="loading-text">Voice Social</div>
+      <div class="loading-subtitle">ভয়েস সোশ্যাল</div>
+      <div class="loading-spinner"></div>
+    </div>
+    
+    <div id="root"></div>
+    <div id="voice-status"></div>
+    
+    <!-- PWA Install Script -->
+    <script>
+      // Remove loading screen when app loads
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          const loading = document.getElementById('initial-loading');
+          if (loading) {
+            loading.style.opacity = '0';
+            loading.style.transition = 'opacity 0.5s ease-out';
+            setTimeout(() => loading.remove(), 500);
+          }
+        }, 1000);
+      });
+      
+      // Register Service Worker
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then((registration) => {
+              console.log('SW registered: ', registration);
+            })
+            .catch((registrationError) => {
+              console.log('SW registration failed: ', registrationError);
+            });
+        });
+      }
+      
+      // Handle PWA install prompt
+      let deferredPrompt;
+      window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferredPrompt = e;
+        console.log('PWA install prompt available');
+      });
+      
+      // Handle app installed
+      window.addEventListener('appinstalled', (evt) => {
+        console.log('PWA was installed');
+      });
+    </script>
+  </body>
+</html>

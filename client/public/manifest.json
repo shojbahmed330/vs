@@ -1,0 +1,146 @@
+{
+  "short_name": "Voice Social",
+  "name": "Voice Social - ভয়েস সোশ্যাল",
+  "description": "ভয়েস কমান্ড দিয়ে সোশ্যাল মিডিয়া ব্যবহার করুন। বন্ধুদের সাথে যোগাযোগ করুন, স্টোরি শেয়ার করুন এবং আরও অনেক কিছু।",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "icon-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "icon-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "apple-touch-icon.png",
+      "type": "image/png",
+      "sizes": "180x180"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#4267B2",
+  "background_color": "#f0f2f5",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "bn",
+  "dir": "ltr",
+  "categories": ["social", "communication", "lifestyle"],
+  "screenshots": [
+    {
+      "src": "screenshot-wide.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Voice Social Desktop View"
+    },
+    {
+      "src": "screenshot-narrow.png", 
+      "sizes": "720x1280",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Voice Social Mobile View"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "নতুন পোস্ট",
+      "short_name": "পোস্ট",
+      "description": "নতুন পোস্ট তৈরি করুন",
+      "url": "/?action=new-post",
+      "icons": [
+        {
+          "src": "shortcut-new-post.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "মেসেজ",
+      "short_name": "মেসেজ",
+      "description": "বার্তা দেখুন",
+      "url": "/messages",
+      "icons": [
+        {
+          "src": "shortcut-messages.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "স্টোরি",
+      "short_name": "স্টোরি",
+      "description": "নতুন স্টোরি তৈরি করুন",
+      "url": "/stories",
+      "icons": [
+        {
+          "src": "shortcut-stories.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "সার্চ",
+      "short_name": "সার্চ",
+      "description": "বন্ধু ও কন্টেন্ট খুঁজুন",
+      "url": "/search",
+      "icons": [
+        {
+          "src": "shortcut-search.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "share_target": {
+    "action": "/share",
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url",
+      "files": [
+        {
+          "name": "media",
+          "accept": ["image/*", "video/*"]
+        }
+      ]
+    }
+  },
+  "protocol_handlers": [
+    {
+      "protocol": "web+voicesocial",
+      "url": "/share?url=%s"
+    }
+  ],
+  "prefer_related_applications": false,
+  "related_applications": [
+    {
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=com.voicesocial.app",
+      "id": "com.voicesocial.app"
+    },
+    {
+      "platform": "itunes",
+      "url": "https://apps.apple.com/app/voice-social/id123456789"
+    }
+  ],
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "launch_handler": {
+    "client_mode": ["navigate-existing", "auto"]
+  },
+  "handle_links": "preferred",
+  "capture_links": "new-client"
+}
